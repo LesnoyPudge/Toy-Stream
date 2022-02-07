@@ -1,0 +1,26 @@
+@import '../../vars.scss';
+
+
+
+.navbar {
+    display: flex;
+    
+    &__list {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__nav-item {}
+}
+
+.nav-item {
+    transition: var(--transition__duration);
+
+    &:hover {
+        color: var(--accent--hover);
+    }
+
+    &--active {
+        color: var(--accent--active)!important;
+    }
+}

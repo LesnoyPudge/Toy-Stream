@@ -1,0 +1,27 @@
+.social-links {
+    &__list {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__item {
+        &:hover {
+            .social-links {
+                &__icon {
+                    fill: var(--icons__color--hover);
+                }
+            }
+        }
+    }
+
+    &__link {
+        display: flex;
+    }
+
+    &__icon {
+        width: 25px;
+        height: 25px;
+        fill: var(--icons__color);
+        transition: var(--transition__duration);
+    }
+}

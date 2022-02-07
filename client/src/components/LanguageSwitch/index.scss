@@ -1,0 +1,17 @@
+@import '../../vars.scss';
+
+
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent);
+    transition: var(--transition__duration);
+    cursor: pointer;
+    color: var(--accent__text);
+
+    &:hover {
+        background-color: var(--accent--hover);
+    }
+}

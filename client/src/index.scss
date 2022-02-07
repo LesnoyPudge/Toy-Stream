@@ -1,0 +1,137 @@
+@import '../node_modules/reset-css/sass/reset';
+@import './fonts';
+@import './vars';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+    width: fit-content;
+}
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    text-rendering: optimizeSpeed;
+    font-size: 2.4rem;
+    line-height: 1;
+    font-family: 'Akrobat', sans-serif;
+    font-weight: 400;
+    background-color: var(--bg__primary);
+    color: var(--font__primary);
+    overflow-x: hidden;
+    transition: var(--transition__duration);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+    text-align: center;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.visually-hidden {
+    position: absolute !important;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.container {
+    max-width: 1590px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
