@@ -7,12 +7,12 @@ import './index.scss';
 
 export const IntroSection: FC = () => {
     return (
-        <section className="intro-section">
+        <section className="intro">
             <div className="container">
-                <div className="intro-section__inner">
-                    <div className="intro-section__header">
+                <div className="intro__inner">
+                    <div className="intro__header">
                         <SectionTitle
-                            className='intro-section'
+                            className='intro'
                         >
                             Мы создаем мобильные <br/> 
                             игры, в которые играют <br/>
@@ -20,9 +20,9 @@ export const IntroSection: FC = () => {
                         </SectionTitle>
                     </div>
                     
-                    <div className="intro-section__content">
+                    <div className="intro__content">
                         <NextPageButton
-                            className='intro-section'
+                            className='intro'
                             position='down'
                             direction='right'
                             to='/company'
@@ -31,7 +31,7 @@ export const IntroSection: FC = () => {
                             подробнее
                         </NextPageButton>
 
-                        <div className="intro-section__text">
+                        <div className="intro__text">
                             <p>
                             «Оригинальные идеи, качество реализации <br/>
                             игровых механик и внимание к деталям <br/>

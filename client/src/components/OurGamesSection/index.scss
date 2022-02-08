@@ -1,0 +1,66 @@
+.our-games {
+    &__list {
+        display: grid;
+        grid-auto-rows: 1fr;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+
+        &:nth-child(even) {
+            .our-games {
+                &__inner {
+                    flex-flow: row-reverse;
+                }
+            }
+        }
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 160px;
+        
+        >* {
+            flex: 1 1 50%;
+        }
+    }
+
+    &__content-side {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        justify-content: center;
+    }
+
+    &__image-side {}
+
+    &__game-image {
+        width: 700px;
+        height: 700px;
+    }
+
+    &__header {}
+
+    &__section-title {
+        font-size: 9rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    &__button {}
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+}

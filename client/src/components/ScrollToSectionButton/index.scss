@@ -1,0 +1,65 @@
+.scroll-to-section {
+    background-color: var(--accent);
+    transition: var(--transition__duration);
+
+    &:hover {
+        background-color: var(--accent--hover);
+    }
+
+    &--pos {
+        &-up, &-down {
+            .scroll-to-section {
+                &__inner {
+                    flex-direction: column;
+                }
+            }
+        }
+
+        &-left, &-right {
+            .scroll-to-section {
+                &__inner {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+
+    &--dir {
+        &-left, &-right {
+            .scroll-to-section {
+                &__arrow {
+                    height: 16px;
+                    width: 100%;
+                }
+            }
+        }
+
+        &-up, &-down {
+            .scroll-to-section {
+                &__arrow {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    &__inner {
+        display: flex;
+        padding: 25px 15px;
+        gap: 5px;
+    }
+
+    &__text {
+        color: var(--accent__text);
+        font-weight: 900;
+        font-size: 2.2rem;
+        line-height: 1.5;
+        text-align: start;
+    }
+
+    &__arrow {
+        height: auto;
+        width: 100%;
+    }
+}

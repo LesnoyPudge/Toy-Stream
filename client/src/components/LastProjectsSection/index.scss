@@ -1,0 +1,41 @@
+.last-projects {
+    &__inner {}
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+
+    &__section-title {}
+
+    &__slider-controls {}
+
+    &__content {}
+
+    &__slider {}
+
+    &__item {}
+
+    &__item-image {
+        width: 410px;
+        height: 410px;
+        margin-bottom: 20px;
+    }
+
+    &__item-content {}
+
+    &__item-title {
+        font-weight: 800;
+        font-size: 4.4rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    &__item-text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-weight: 600;
+    }
+}

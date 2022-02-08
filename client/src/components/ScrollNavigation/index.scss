@@ -4,10 +4,10 @@
     transform: translateY(-50%);
     right: 0;
     z-index: 2;
+    margin-right: 20px;
+    max-width: 120px;
 
-    &__inner {
-        padding: 20px;
-    }
+    &__inner {}
 
     &__list {
         display: flex;
@@ -18,7 +18,8 @@
 
     &__item {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+        width: 100%;
         gap: 10px;
         font-size: 1.8rem;
         align-items: center;
@@ -29,7 +30,8 @@
 
         &::after {
             content: '';
-            display: block;
+            display: flex;
+            flex-shrink: 0;
             width: 30px;
             height: 30px;
             background-color: var(--scroll-navigation);
@@ -53,5 +55,7 @@
         }
     }
 
-    &__item-label {}
+    &__item-label {
+        text-align: end;
+    }
 }

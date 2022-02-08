@@ -1,0 +1,50 @@
+.about-games {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 53%;
+        height: 87%;
+        background-color: var(--bg__about-games);
+        z-index: -1;
+    }
+
+    &__inner {
+        display: flex;
+        gap: 310px;
+    }
+
+    &__content-side {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        justify-content: center;
+    }
+
+    &__image-side {}
+
+    &__character {
+        width: auto;
+        height: 560px;
+    }
+
+    &__header {}
+
+    &__section-title {
+        font-size: 9rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    &__button {}
+
+    &__text {
+        font-weight: 600;
+        line-height: 1.2;
+    }
+}

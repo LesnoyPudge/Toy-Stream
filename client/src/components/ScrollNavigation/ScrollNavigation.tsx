@@ -7,42 +7,36 @@ export const ScrollNavigation: FC = ({children}) => {
     const [activeItem, setActiveItem] = useState(0);
     const [targets, setTargets] = useState<NodeListOf<HTMLElement>>();
 
-    const observe = useCallback(() => {
+
+    const scrollHandler = useCallback(() => {
         if (!targets) return;
 
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.6,
-        };
+        const center = (window.innerHeight / 2);
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((element: any) => {
-                if (element.isIntersecting) {
-                    targets.forEach((target, index) => {
-                        if (target !== element.target) return;
+        targets.forEach((target, index) => {
+            if (index === activeItem) return;
 
-                        setActiveItem(index);
-                    });
-                }
-            });
-        }, options);
-        
-        targets.forEach(target => {
-            observer.observe(target);
+            if (target.getBoundingClientRect().top < center && target.getBoundingClientRect().bottom > center) {
+                setActiveItem(index);
+            }
+        })
+    }, [activeItem, targets]);
+
+    useEffect(() => {
+        document.addEventListener('scroll', scrollHandler);
+
+        return (() => {
+            document.removeEventListener('scroll', scrollHandler);
         });
-    }, [targets]);
+    }, [scrollHandler]);
 
     useEffect(() => {
         setTargets(document.querySelectorAll('section'));
     }, [])
 
-    useEffect(() => {
-        observe();
-    }, [observe]);
-
-    function clickHundler(index: number) {
+    function clickHandler(index: number) {
         if (!targets) return;
+        if (!targets[index]) return;
 
         targets[index].scrollIntoView({block: "start", behavior: "smooth"});
     }
@@ -51,7 +45,7 @@ export const ScrollNavigation: FC = ({children}) => {
         return React.Children.map(children, (child: any, index) => {
             return React.cloneElement(child, {
                 isActive: index === activeItem,
-                onClick: () => {clickHundler(index)},
+                onClick: () => {clickHandler(index)},
             })
         });
     }

@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { NextPageButton } from "../NextPageButton/NextPageButton";
 import { SectionTitle } from "../SectionTitle/SectionTitle";
 import './index.scss';
 
