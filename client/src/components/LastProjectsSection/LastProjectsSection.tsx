@@ -44,9 +44,10 @@ export const LastProjectsSection: FC = () => {
                                 {
                                     data.map((game, index) => {
                                         return (
-                                            <SwiperSlide>
+                                            <SwiperSlide
+                                                key={index}
+                                            >
                                                 <LastProjectsItem
-                                                    key={index}
                                                     game={game}
                                                 />
                                             </SwiperSlide>

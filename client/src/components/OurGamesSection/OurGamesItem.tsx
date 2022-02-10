@@ -9,7 +9,7 @@ interface IOurGamesItemProps {
     game: IGameData;
 }
 
-export interface IGameData {
+interface IGameData {
     label: string;
     description: string;
     image: string;
