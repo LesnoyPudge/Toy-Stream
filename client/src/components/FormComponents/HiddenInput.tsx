@@ -1,14 +1,16 @@
 import { useField } from "formik";
+import { FC } from "react";
+import { IInputFieldProps } from "./types";
 
 
 
-export function HiddenInput() {
-    // const [field] = useField(props);
+export const HiddenInput: FC<IInputFieldProps> = (props) => {
+    const [field] = useField(props);
 
     return (
         <input 
+            {...field}
             type="hidden"
-            // {...field} {...props}
         />
     );
 }

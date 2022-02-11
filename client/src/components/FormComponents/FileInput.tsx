@@ -1,4 +1,4 @@
-import { useField } from "formik";
+import { useField, useFormikContext } from "formik";
 import { FC } from "react";
 import { IInputFieldProps } from "./types";
 import './index.scss';
@@ -7,10 +7,11 @@ import { useFocus } from "../../hooks/useFocus";
 
 
 
-export const TextInput: FC<IInputFieldProps> = ({className, label, ...props}) => {
+export const FileInput: FC<IInputFieldProps> = ({className, label, ...props}) => {
     const {isFocused, focusHandler, blurHandler} = useFocus(props);
     const [field, meta] = useField(props);
-
+    const { setFieldValue } = useFormikContext();
+    
     return (
         <>
             <div 
@@ -35,9 +36,26 @@ export const TextInput: FC<IInputFieldProps> = ({className, label, ...props}) =>
                     }
 
                     <input 
-                        {...field} {...props}
-                        className="form-field__input" 
+                        {...props}
+                        className="form-field__input visually-hidden" 
+                        onChange={(event) => {
+                            setFieldValue(field.name, event.target.files![0])
+                        }}
                     />
+
+                    <div className="form-field__input-placeholder">
+                        
+                        {
+                            (field.value) ?
+                                'Прикреплено: ' + field.value.name
+                            :
+                            props.placeholder
+                        }
+
+                        <svg>
+                            <use xlinkHref="#file-input-icon" />
+                        </svg>
+                    </div>
 
                     <div className="form-field__separator"/>
                     

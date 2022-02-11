@@ -1,17 +1,24 @@
 import { useField } from "formik";
+import { FC } from "react";
+import { ISubmitButtonProps } from "./types";
 
 
 
-export function SubmitButton() {
-    // const [field] = useField(props);
+export const SubmitButton: FC<ISubmitButtonProps> = ({className, disabled, children, ...props}) => {
+    const [field] = useField(props);
     
     return (
         <button 
-            // {...field} {...props}
+            {...field} {...props}
+            disabled={disabled}
             type="submit"
-            // className={props.className + '__submit-button button submit-button button-animation'}  
+            className={
+                (className ? className + '__submit-button ' : '') +
+                'form-submit ' +
+                'button '
+            }  
         >
-            {/* {children}     */}
+            {children}    
         </button>
     );
 };

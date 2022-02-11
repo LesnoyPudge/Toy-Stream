@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { Formik, Form, FormikProps } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { SectionTitle } from "../SectionTitle/SectionTitle";
 import { useHttp } from "../../hooks/http.hook";
-import {  TextInput } from "../FormComponents";
+import {  FileInput, HiddenInput, SubmitButton, TextInput } from "../FormComponents";
 import { Loader } from "../Lodaer/Loader";
 
 
@@ -16,8 +16,8 @@ interface ContactFormValues {
     candidateName: string;
     candidateEmail: string;
     candidatePhone: string;
-    // candidateResume: HTMLInputElement;
-    // extraFiles: HTMLInputElement;
+    candidateResume: any;
+    extraFiles: any;
     comment: string;
     requestTime: string;
     vacancyId: string,
@@ -25,17 +25,57 @@ interface ContactFormValues {
 
 export const ContactUsSection: FC<IContactUsSectionProps> = ({vacancyId}) => {
     const { request, error } = useHttp();
-    const formClassName = 'contact-us';
+    const formClassName = 'contact-us-form';
     const initialValues: ContactFormValues = {
         candidateName: "",
         candidateEmail: "",
         candidatePhone: "",
-        // candidateResume: ,
-        // extraFiles: "",
+        candidateResume: "",
+        extraFiles: "",
         comment: "",
         requestTime: "",
         vacancyId: vacancyId,
     };
+
+    const validationSchema = Yup.object({
+        candidateName: Yup.string()
+            .required("Required"),
+        
+        candidateEmail: Yup.string()
+            .trim()
+            .email()                            
+            .required("Required"),
+        
+        candidatePhone: Yup.string()
+            .trim()
+            .matches(/^((8|\+7)[ - ]?)?(\(?\d{3}\)?[ - ]?)?[\d\- ]{7,10}$/, "Invalid phone number")
+            .required("Required"),
+
+        candidateResume: Yup.mixed()
+            .required("Required")
+            .test("fileSize", "The file is too large", (value) => {
+                if (!value) return false;
+                return value.size <= 10000000
+            }),
+        extraFiles: Yup.mixed()
+            .nullable()
+            .test("fileSize", "The file is too large", (value) => {
+                if (!value) return true;
+                return value.size <= 10000000;
+            }),
+    });
+
+    async function submitHandler(values:any, setSubmitting: (isSubmiting: boolean) => void) {   
+        values.requestTime = Date.now().toString();
+
+        try {
+            await request('./api/candidate/add', 'POST', values, {});
+            setSubmitting(false);
+        } catch (error) {
+            console.log(error);
+            setSubmitting(false);
+        }    
+    }
 
     return (
         <section className="contact-us">
@@ -54,33 +94,13 @@ export const ContactUsSection: FC<IContactUsSectionProps> = ({vacancyId}) => {
                         <Formik
                             initialValues={initialValues}
 
-                            // validationSchema={Yup.object({
-                            //     candidateName: Yup.string()
-                            //         .required("Required"),
-                                
-                            //     candidateEmail: Yup.string()
-                            //         .trim()
-                            //         .email()                            
-                            //         .required("Required"),
-                                
-                            //     questionText: Yup.string()
-                            //         .trim()
-                            //         .required("Required"),
-                            // })}
+                            validationSchema={validationSchema}
 
-                            onSubmit={ async (values, { setSubmitting }) => {
-                                values.requestTime = Date.now().toString();
-                                // console.log(values);
-                                try {
-                                    await request('./api/candidate/add', 'POST', values, {});
-                                    setSubmitting(false);
-                                } catch (error) {
-                                    console.log(error);
-                                    setSubmitting(false);
-                                }    
+                            onSubmit={(values, { setSubmitting }) => {
+                                submitHandler(values, setSubmitting);
                             }}
                         >
-                            {( props: FormikProps<ContactFormValues> ) => (
+                            {({isSubmitting}) => (
                                 <Form
                                     className={formClassName}
                                 >
@@ -109,7 +129,7 @@ export const ContactUsSection: FC<IContactUsSectionProps> = ({vacancyId}) => {
                                             placeholder="8 800 555 35 35"
                                         />
 
-                                        {/* <FileInput
+                                        <FileInput
                                             className={formClassName}
                                             label="Ваше резюме*"
                                             name="candidateResume"
@@ -123,7 +143,7 @@ export const ContactUsSection: FC<IContactUsSectionProps> = ({vacancyId}) => {
                                             name="extraFiles"
                                             type="file"
                                             placeholder="Дополнительные файлы"
-                                        /> */}
+                                        />
 
                                         <TextInput
                                             className={formClassName}
@@ -133,37 +153,36 @@ export const ContactUsSection: FC<IContactUsSectionProps> = ({vacancyId}) => {
                                             placeholder="Дополнительный комментарий"
                                         />
 
-                                        {/* <HiddenInput
+                                        <HiddenInput
                                             name="requestTime"
                                         />
 
                                         <HiddenInput
                                             name="vacancyId"
-                                        /> */}
+                                        />
                                     </div>
                                     
-
                                     {
-                                        // (error) ?
-                                        //     <SubmitButton
-                                        //         className={formClassName}
-                                        //         name="submit"
-                                        //         disabled={isSubmitting}
-                                        //     >
-                                        //         {
-                                        //             (isSubmitting) ? <Loader/> : 'Ошибка! Повторить попытку'
-                                        //         }
-                                        //     </SubmitButton>
-                                        // :
-                                        // <SubmitButton
-                                        //     className={formClassName}
-                                        //     name="submit"
-                                        //     disabled={isSubmitting}
-                                        // >
-                                        //     {
-                                        //         (isSubmitting) ? <Loader/> : 'Отправить'
-                                        //     }
-                                        // </SubmitButton>
+                                        (error) ?
+                                            <SubmitButton
+                                                className={formClassName}
+                                                name="submit"
+                                                disabled={isSubmitting}
+                                            >
+                                                {
+                                                    (isSubmitting) ? <Loader/> : 'Ошибка! Повторите попытку'
+                                                }
+                                            </SubmitButton>
+                                        :
+                                        <SubmitButton
+                                            className={formClassName}
+                                            name="submit"
+                                            disabled={isSubmitting}
+                                        >
+                                            {
+                                                (isSubmitting) ? <Loader/> : 'Отправить'
+                                            }
+                                        </SubmitButton>
                                     }
                                 </Form>
                             )}

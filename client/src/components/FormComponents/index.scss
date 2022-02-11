@@ -1,22 +1,22 @@
-.form-name {
-    &__inner {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
+// .form-name {
+//     &__inner {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 30px;
+//     }
 
-    &__row {
-        display: flex;
-        gap: 30px;
-    }
-}
+//     &__row {
+//         display: flex;
+//         gap: 30px;
+//     }
+// }
 
 .form-field {
     position: relative;
     width: 100%;
     font-weight: 600;
 
-    &.focus {
+    &--focus {
         .form-field {
             &__separator {
                 &::after {
@@ -28,21 +28,24 @@
         } 
     }
 
-    &.error {
+    &--error {
         .form-field {
             &__separator {
                 &::after {
-                    // animation: anim 1s ease 0s 1 alternate;
+                    visibility: visible;
+                    width: 100%;
                     background-color: var(--form-input__decor--error);
                 }
             } 
         } 
     }
 
-    &.validated {
+    &--validated {
         .form-field {
             &__separator {
                 &::after {
+                    visibility: visible;
+                    width: 100%;
                     background-color: var(--form-input__decor--validated);
                 }
             }
@@ -67,6 +70,19 @@
 
         &::placeholder {
             color: var(--form-input__placeholder);
+        } 
+    }
+
+    &__input-placeholder {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        color: var(--form-input__placeholder);
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--form-input__placeholder);
         }
     }
 
@@ -85,12 +101,11 @@
             top: 100%;
             transform: translate(-50%, -75%);
             border-radius: 4px;
-            height: 4px;
+            height: 2px;
             width: 0;
             visibility: hidden;
             z-index: 1;
-            // transition: var(--transition__duration);
-            transition: 1s linear;
+            transition: var(--transition__duration);
         }
     }
 
@@ -100,16 +115,6 @@
     }
 }
 
-@keyframes anim {
-    0% {
-        width: 100%;
-    }
-
-    50% {
-        width: 0;
-    }
-
-    100% {
-        width: 100%;
-    }
+.form-submit {
+    background-color: bisque;
 }
