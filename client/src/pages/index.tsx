@@ -6,3 +6,4 @@ export * from './CareerPage';
 export * from './NewsPage';
 export * from './ContactsPage';
 export * from './SingleVacancyPage';
+export * from './SingleNewsPage';

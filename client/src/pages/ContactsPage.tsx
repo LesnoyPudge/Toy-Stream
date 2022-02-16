@@ -1,10 +1,9 @@
+import { ContactsSection } from "../components/ContactsSection/ContactsSection";
 
 
 
 export const ContactsPage = () => {
     return (
-        <div className=''>
-            contacts
-        </div>
+        <ContactsSection/>
     );
 }

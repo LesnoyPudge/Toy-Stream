@@ -1,0 +1,47 @@
+.contacts {
+    &__inner {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        gap: 60px;
+    }
+    
+    &__header {
+        margin: auto 0;
+    }
+
+    &__section-title {
+        margin-bottom: 60px;
+    }
+
+    &__address {
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        font-size: 2.2rem;
+    }
+
+    &__phone {
+        font-weight: 800;
+        font-size: 2.6rem;
+        margin-bottom: 10px;
+    }
+
+    &__email {
+        margin-bottom: 40px;
+    }
+
+    &__content {}
+
+    &__map {
+        height: 625px;
+        width: 100%;
+        
+        [class*="ymaps-2"][class*="-ground-pane"] {
+            filter: grayscale(1);
+        }
+
+        [class*="copyrights-pane"] {
+            display: none;
+        }
+    }
+}

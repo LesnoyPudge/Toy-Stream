@@ -13,7 +13,7 @@ export const SubmitButton: FC<ISubmitButtonProps> = ({className, disabled, child
             disabled={disabled}
             type="submit"
             className={
-                (className ? className + '__submit-button ' : '') +
+                (className ? className + '__form-submit ' : '') +
                 'form-submit ' +
                 'button '
             }  

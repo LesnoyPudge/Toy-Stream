@@ -26,12 +26,12 @@ export const TextInput: FC<IInputFieldProps> = ({className, label, ...props}) =>
             >
                 <label className="form-field__label">
                     {
-                        (label) ? 
-                            <span className="form-field__label-text">
-                                {label}
-                            </span>
-                        :
-                        null
+                        // (label) ? 
+                        //     <span className="form-field__label-text">
+                        //         {label}
+                        //     </span>
+                        // :
+                        // null
                     }
 
                     <input 

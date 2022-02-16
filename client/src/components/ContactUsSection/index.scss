@@ -1,0 +1,28 @@
+.contact-us {
+    &__inner {}
+
+    &__header {
+        margin-bottom: 50px;
+    }
+
+    &__content {}
+
+    &-form {
+        &__inner {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+    
+        &__row {
+            display: flex;
+            gap: 55px;
+        }
+
+        &__form-field {}
+    
+        &__form-submit {
+            margin-top: 50px;
+        }
+    }
+}

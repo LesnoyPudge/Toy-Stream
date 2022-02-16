@@ -1,0 +1,13 @@
+.publish-date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.6rem;
+    color: var(--news-publish-date__color);
+    
+    &-icon {
+        width: 24px;
+        height: 24px;
+        fill: var(--news-publish-date__color);
+    }
+}

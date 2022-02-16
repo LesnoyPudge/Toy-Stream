@@ -10,6 +10,7 @@ import {
     ContactsPage,
     CareerPage,
     SingleVacancyPage,
+    SingleNewsPage,
 } from './pages';
 
 
@@ -25,6 +26,7 @@ export const App: FC = () => {
                     <Route path='career' element={<CareerPage/>}/>
                     <Route path='career/:vacancyId' element={<SingleVacancyPage/>}/>
                     <Route path='news' element={<NewsPage />}/>
+                    <Route path='news/:newsId' element={<SingleNewsPage/>}/>
                     <Route path='contacts' element={<ContactsPage/>}/>
                     <Route path='*' element={<NotFoundPage />}/>
                 </Route>

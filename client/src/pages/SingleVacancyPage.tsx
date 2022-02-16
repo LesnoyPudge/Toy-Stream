@@ -37,9 +37,7 @@ export const SingleVacancyPage: FC = () => {
                 vacancy={vacancy}
             />
 
-            <ContactUsSection
-                vacancyId={vacancy.id}
-            />
+            <ContactUsSection/>
         </>
     );
 }
