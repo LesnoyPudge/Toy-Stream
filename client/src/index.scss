@@ -80,6 +80,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     position: relative;
+    overflow-x: hidden;
 }
 
 section {
@@ -140,5 +141,11 @@ section {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .main {
+        margin-top: var(--header-height);
     }
 }

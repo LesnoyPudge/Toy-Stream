@@ -7,6 +7,9 @@
     
     &__list {
         display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
         gap: 20px;
     }
 
@@ -14,6 +17,7 @@
 }
 
 .nav-item {
+    text-align: center;
     transition: var(--transition__duration);
 
     &:hover {
@@ -23,4 +27,8 @@
     &--active {
         color: var(--accent--active)!important;
     }
+}
+
+@media (max-width: 1200px) {
+    
 }

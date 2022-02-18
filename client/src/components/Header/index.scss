@@ -1,3 +1,88 @@
+// .header {
+//     position: absolute;
+//     z-index: 2;
+//     top: 0;
+//     width: 100%;
+
+//     &__inner {
+//         display: flex;
+//         justify-content: space-between;
+
+//         >* {
+//             margin: auto 0;
+//         }
+//     }
+
+//     &__logo {
+//         margin-left: 84px;
+
+//         svg {
+//             width: 135px;
+//             height: 75px;
+//         }
+//     }
+
+//     &__navbar {
+//         margin-left: auto;
+//         margin-right: 95px;
+
+//         .navbar {
+//             &__list {
+//                 gap: 55px;
+//             }
+
+//             &__nav-item {
+//                 font-weight: 600;
+//                 font-size: 2rem;
+//             }
+//         }
+//     }
+
+//     &__language-switch {
+//         height: 120px;
+//         width: 120px;
+//     }
+
+//     &__burger {
+//         display: none;
+//     }
+// }
+
+// @media (max-width: 1200px) {
+//     .header {
+//         &__navbar {
+//             // width: 100%;
+//             margin: auto 0;
+
+//             .navbar {
+//                 &__list {
+//                     // width: 100%;
+//                     // justify-content: space-between;
+//                     gap: 25px;
+//                 }
+//             }
+//         }
+
+//         &__logo {
+//             margin-left: 20px;
+//         }
+
+//         &__language-switch {
+//             height: auto;
+//             margin: 0;
+//         }
+//     }
+// }
+
+@media (max-width: 950px) {
+
+}
+
+@media (max-width: 1000px) {
+    
+}
+
+
 .header {
     position: absolute;
     z-index: 2;
@@ -6,17 +91,16 @@
 
     &__inner {
         display: flex;
-        justify-content: space-between;
-
-        * {
-            margin: auto 0;
-        }
+        align-items: center;
+        justify-content: center;
     }
 
     &__logo {
-        margin-left: 84px;
+        margin-left: 86px;
+        margin-right: auto;
 
         svg {
+            display: block;
             width: 135px;
             height: 75px;
         }
@@ -39,7 +123,103 @@
     }
 
     &__language-switch {
+        min-width: 120px;
         height: 120px;
-        width: 120px;
     }
+
+    &__burger {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header {
+        &__logo {
+            margin-left: 50px;
+        }
+
+        &__navbar {
+            margin: 0 auto;
+            width: 60%;
+            
+            .navbar {
+                &__list {
+                    gap: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+
+        &__inner {
+            padding: 10px 20px;
+        }
+
+        &__logo {
+            margin-left: 0;
+        }
+
+        .navbar {
+            position: fixed;
+            justify-content: flex-end;
+            z-index: 3;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            right: 0;
+            transition: var(--transition__duration);
+
+            &__list {
+                transform: translateX(100%);
+                flex-direction: column;
+                justify-content: center;
+                gap: 50px;
+                background-color: #FFEE2F;
+                width: auto;
+                padding: 0 100px;
+                transition: var(--transition__duration);
+            }
+
+            &--active {
+                background-color: rgba($color: #000000, $alpha: 0.5);
+
+                .navbar {
+                    &__list {
+                        transform: translateX(0);
+                    }
+                }
+            }
+        }
+        
+
+        &__language-switch {
+            margin-right: 40px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        &__burger {
+            display: flex;
+            z-index: 4;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        &__language-switch {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    
 }

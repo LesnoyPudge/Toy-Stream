@@ -6,40 +6,54 @@ import './index.scss';
 
 interface INavbarProps {
     className: string;
+    menuIsOpen?: boolean;
+    handleClose?: () => void;
 }
 
-export const Navbar: FC<INavbarProps> = ({className}) => {
+export const Navbar: FC<INavbarProps> = ({className, menuIsOpen, handleClose}) => {
+
     return (
         <nav 
             className={
-                ((className) ? className + '__navbar ' : '') + 
-                'navbar' 
+                (className ? className + '__navbar ' : '') + 
+                'navbar ' + 
+                (menuIsOpen ? 'navbar--active' : '')
             }
+            onClick={handleClose}
         >
-            <ul className="navbar__list">
-                <NavbarItem to='/'>
-                    Главная страница
-                </NavbarItem>
+            <ul 
+                className="navbar__list"
+                onClick={(e) => {e.stopPropagation()}}
+            >
+                <NavbarItem 
+                    label="Главная страница"
+                    to='/'
+                    handleClose={handleClose}
+                /> 
 
-                <NavbarItem to='/company'>
-                    Компания
-                </NavbarItem>
+                <NavbarItem 
+                    label="Компания"
+                    to='/company'
+                    handleClose={handleClose}
+                />
 
-                <NavbarItem to='/games'>
-                    Игры
-                </NavbarItem>
+                <NavbarItem 
+                    label="Карьера"
+                    to='/career'
+                    handleClose={handleClose}
+                />
 
-                <NavbarItem to='/career'>
-                    Карьера
-                </NavbarItem>
+                <NavbarItem 
+                    label="Новости"
+                    to='/news'
+                    handleClose={handleClose}
+                />
 
-                <NavbarItem to='/news'>
-                    Новости
-                </NavbarItem>
-
-                <NavbarItem to='/contacts'>
-                    Контакты
-                </NavbarItem>
+                <NavbarItem 
+                    label="Контакты"
+                    to='/contacts'
+                    handleClose={handleClose}
+                />
             </ul>
         </nav>
     );

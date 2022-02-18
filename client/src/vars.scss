@@ -42,6 +42,13 @@
     --transition__duration: 0.2s;
 
     --footer-height: 61px;
+    --header-height: 0px;
+}
+
+@media (max-width: 1000px) {
+    :root {
+        --header-height: 95px;
+    }
 }
 
 // @media (prefers-color-scheme: dark) {

@@ -1,0 +1,56 @@
+@import '../../vars.scss';
+
+
+
+.burger {
+    display: flex;
+    position: relative;
+    width: 40px;
+    height: 40px;
+
+    &__bar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 4px;
+        background-color: black;
+        transition: var(--transition__duration);
+
+        &:nth-of-type(1) {
+            background-color: aqua;
+            top: 20%;
+        }
+
+        &:nth-of-type(2) {
+            background-color:blueviolet;
+        }
+
+        &:nth-of-type(3) {
+            background-color:tomato;
+            top: 80%;
+        }
+    }
+
+    &--active {
+        .burger {
+            &__bar {
+                top: 50%;
+
+                &:nth-of-type(1) {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+
+                &:nth-of-type(2) {
+                    opacity: 0;
+                    width: 0;
+                }
+
+                &:nth-of-type(3) {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            }
+        }
+    }
+}
