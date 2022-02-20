@@ -16,7 +16,7 @@ import './index.scss';
                 <Outlet />
             </main>
 
-            {/* <Footer/> */}
+            <Footer/>
 
             <Sprites/>
         </>

@@ -1,8 +1,7 @@
 import { FC, useState } from "react";
 import { LangugageSwitch } from "../LanguageSwitch/LanguageSwitch";
 import { Navbar } from "../Navbar/Navbar";
-import { BurgerButton } from "./BurgerButton";
-
+import { BurgerButton } from "../BurgerButton/BurgerButton";
 
 
 export const Menu: FC = () => {

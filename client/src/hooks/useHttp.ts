@@ -27,9 +27,9 @@ export function useHttp() {
 
             return data;
         } catch (e) {
-            setIsLoading(false);
-            setError(e);
-            throw e;
+            // setIsLoading(false);
+            // setError(e);
+            // throw e;
         }
     }, []);
     

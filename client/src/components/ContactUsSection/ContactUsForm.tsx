@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { useHttp } from "../../hooks/http.hook";
+import { useHttp } from "../../hooks/useHttp";
 import {  FileInput, HiddenInput, SubmitButton, TextInput, validationFields } from "../FormComponents";
 import { Loader } from "../Lodaer/Loader";
 import { useParams } from "react-router-dom";

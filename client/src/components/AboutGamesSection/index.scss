@@ -11,8 +11,9 @@
     }
 
     &__inner {
-        display: flex;
-        gap: 310px;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        margin-top: var(--header-height);
     }
 
     &__content-side {
@@ -22,9 +23,11 @@
         justify-content: center;
     }
 
-    &__image-side {}
+    &__image-side {
+        margin: auto;
+    }
 
-    &__character {
+    &__image {
         width: auto;
         height: 560px;
     }
@@ -46,5 +49,27 @@
     &__text {
         font-weight: 600;
         line-height: 1.2;
+    }
+}
+
+@media (max-width: 1000px) {
+    .about-games {
+        &__inner {
+            margin-top: 0;
+            grid-template-columns: 1fr;
+
+        }
+
+        &__section-title {
+            font-size: 7.2rem;
+        }
+        
+        &__image {
+            display: none;
+        }
+
+        &__content-side {
+            gap: 40px;
+        }
     }
 }

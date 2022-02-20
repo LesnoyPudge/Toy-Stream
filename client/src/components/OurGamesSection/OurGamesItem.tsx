@@ -53,7 +53,7 @@ export const OurGamesItem: FC<IOurGamesItemProps> = ({game}) => {
 
                 <div className='our-games__image-side'>
                     <img 
-                        className='our-games__game-image' 
+                        className='our-games__image' 
                         src={'/images/' + image + '.jpg'} 
                         alt='our game' 
                     />

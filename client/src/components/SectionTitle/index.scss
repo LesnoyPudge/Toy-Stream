@@ -1,5 +1,6 @@
 .section-title {
-    font-size: 7.2rem;
+    font-size: min(7.2rem, 15vmin);
+    // font-size: 7.2rem;
     line-height: 1.1;
     font-weight: 900;
     text-transform: uppercase;

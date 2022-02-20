@@ -32,6 +32,12 @@ export const Navbar: FC<INavbarProps> = ({className, menuIsOpen, handleClose}) =
                 /> 
 
                 <NavbarItem 
+                    label="Игры"
+                    to='/games'
+                    handleClose={handleClose}
+                />
+
+                <NavbarItem 
                     label="Компания"
                     to='/company'
                     handleClose={handleClose}

@@ -15,11 +15,12 @@
 
     &__slider {}
 
-    &__item {}
+    &__item {
+    }
 
     &__item-image {
-        width: 410px;
-        height: 410px;
+        width: 100%;
+        height: auto;
         margin-bottom: 20px;
     }
 
@@ -37,5 +38,15 @@
         flex-direction: column;
         gap: 10px;
         font-weight: 600;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .last-projects {
+        &__header {
+            gap: 10px;
+            flex-direction: column;
+        }
     }
 }

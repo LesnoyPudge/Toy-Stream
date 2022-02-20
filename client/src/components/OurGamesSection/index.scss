@@ -21,7 +21,7 @@
     &__inner {
         display: flex;
         justify-content: space-between;
-        gap: 160px;
+        gap: 60px;
         
         >* {
             flex: 1 1 50%;
@@ -35,11 +35,13 @@
         justify-content: center;
     }
 
-    &__image-side {}
+    &__image-side {
+        
+    }
 
-    &__game-image {
-        width: 700px;
-        height: 700px;
+    &__image {
+        width: 100%;
+        height: auto;
     }
 
     &__header {}
@@ -62,5 +64,26 @@
         gap: 15px;
         font-weight: 600;
         line-height: 1.2;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .our-games {
+        &__list {
+            gap: 80px;
+        }
+
+        &__item {
+            min-height: auto;
+        }
+
+        &__section-title {
+            font-size: min(7.2rem, 15vmin);
+        }
+
+        &__image-side {
+            display: none;
+        }
     }
 }
