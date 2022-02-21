@@ -9,10 +9,17 @@ export const Menu: FC = () => {
 
     function handleToggle() {
         setMenuIsOpen(!menuIsOpen);
+
+        if (document.body.style.overflow === 'hidden') {
+            document.body.style.overflow = '';
+        } else {
+            document.body.style.overflow = 'hidden';
+        }
     }
 
     function handleClose() {
         setMenuIsOpen(false);
+        document.body.style.overflow = '';
     }
 
     return (
