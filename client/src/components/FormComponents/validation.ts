@@ -1,4 +1,4 @@
-import * as Yup from "yup";
+import * as Yup from 'yup';
 
 
 
@@ -25,7 +25,7 @@ export const validationFields = {
 
     file: 
         Yup.mixed()
-        .test("fileSize", "Размер файла не должен превышать 10мб", (value) => {
+        .test('fileSize', 'Размер файла не должен превышать 10мб', (value) => {
             if (!value) return true;
             return value.size <= 10000000
         }),

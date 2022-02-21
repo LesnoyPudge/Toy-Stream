@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 import './index.scss';
 
 
@@ -15,16 +15,16 @@ export const BurgerButton: FC<IBurgerButton> = ({className, menuIsOpen, handleTo
         <button className=
             {
                 'button ' +
-                (className ? className + "__burger " : '') + 
-                "burger " + 
+                (className ? className + '__burger ' : '') + 
+                'burger ' + 
                 (menuIsOpen ? 'burger--active ' : '')
             }
 
             onClick={handleToggle}
         >
-            <span className="burger__bar"></span>
-            <span className="burger__bar"></span>
-            <span className="burger__bar"></span>
+            <span className='burger__bar'></span>
+            <span className='burger__bar'></span>
+            <span className='burger__bar'></span>
         </button>
     );
 }

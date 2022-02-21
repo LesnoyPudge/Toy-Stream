@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { NewsSection } from "../components/NewsSection/NewsSection";
+import { FC } from 'react';
+import { NewsSection } from '../components/NewsSection/NewsSection';
 
 
 

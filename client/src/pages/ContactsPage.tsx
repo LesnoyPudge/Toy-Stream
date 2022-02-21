@@ -1,4 +1,4 @@
-import { ContactsSection } from "../components/ContactsSection/ContactsSection";
+import { ContactsSection } from '../components/ContactsSection/ContactsSection';
 
 
 

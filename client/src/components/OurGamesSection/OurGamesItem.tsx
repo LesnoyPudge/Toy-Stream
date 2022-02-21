@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { SectionTitle } from "../SectionTitle/SectionTitle";
+import { FC } from 'react';
+import { SectionTitle } from '../SectionTitle/SectionTitle';
 import parse from 'html-react-parser';
-import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 
 
 
@@ -24,7 +24,7 @@ export const OurGamesItem: FC<IOurGamesItemProps> = ({game}) => {
     } = game;
 
     return (
-        <li className="our-games__item">
+        <li className='our-games__item'>
             <div className='our-games__inner'>
                 <div className='our-games__content-side'>
                     <div className='our-games__header'>

@@ -1,14 +1,14 @@
-import { FC, useEffect, useState } from "react";
-import { SectionTitle } from "../SectionTitle/SectionTitle";
-import { SliderNavigation } from "../SliderNavigation/SliderNavigation";
+import { FC, useEffect, useState } from 'react';
+import { SectionTitle } from '../SectionTitle/SectionTitle';
+import { SliderNavigation } from '../SliderNavigation/SliderNavigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './index.scss';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
-import { Navigation } from "swiper";
+import { Navigation } from 'swiper';
 import { data } from './data';
-import { LastProjectsItem } from "./LastProjectsItem";
-import { useMobile } from "../../hooks/useMobile";
+import { LastProjectsItem } from './LastProjectsItem';
+import { useMobile } from '../../hooks/useMobile';
 
 
 
@@ -50,10 +50,10 @@ export const LastProjectsSection: FC = () => {
     }, [isMobile, mobileSize]);
 
     return (
-        <section className="last-projects">
-            <div className="container">
-                <div className="last-projects__inner">
-                    <div className="last-projects__header">
+        <section className='last-projects'>
+            <div className='container'>
+                <div className='last-projects__inner'>
+                    <div className='last-projects__header'>
                         <SectionTitle
                             className='last-projects'
                         >
@@ -65,8 +65,8 @@ export const LastProjectsSection: FC = () => {
                         />
                     </div>
 
-                    <div className="last-projects__content">
-                        <div className="last-projects__slider">
+                    <div className='last-projects__content'>
+                        <div className='last-projects__slider'>
                             <Swiper
                                 modules={[Navigation]}
                                 spaceBetween={options.spaceBetween}

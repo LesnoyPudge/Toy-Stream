@@ -16,13 +16,13 @@ export const SliderNavigation: FC<ISliderNavigationProps> = ({className}) => {
         >
             <button className='slider-navigation__prev button'>
                 <svg>
-                    <use xlinkHref="#slider-navigation-arrow" />
+                    <use xlinkHref='#slider-navigation-arrow' />
                 </svg>
             </button>
 
             <button className='slider-navigation__next button'>
                 <svg>
-                    <use xlinkHref="#slider-navigation-arrow" />
+                    <use xlinkHref='#slider-navigation-arrow' />
                 </svg>
             </button>
         </div>

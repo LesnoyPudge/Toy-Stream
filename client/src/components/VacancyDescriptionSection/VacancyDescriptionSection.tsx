@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { IVacancyData } from "../../pages";
-import { SectionTitle } from "../SectionTitle/SectionTitle";
+import { FC } from 'react';
+import { IVacancyData } from '../../pages';
+import { SectionTitle } from '../SectionTitle/SectionTitle';
 import parse from 'html-react-parser';
 import './index.scss';
 
@@ -18,19 +18,19 @@ export const VacancyDescriptionSection: FC<IVacancyDescriptionSectionProps> = ({
 
 
     return (
-        <section className="vacancy-description">
-            <div className="container">
-                <div className="vacancy-description__inner">
-                    <div className="vacancy-description__header">
+        <section className='vacancy-description'>
+            <div className='container'>
+                <div className='vacancy-description__inner'>
+                    <div className='vacancy-description__header'>
                         <SectionTitle
-                            className="vacancy-description"
+                            className='vacancy-description'
                         >
                             {label}
                         </SectionTitle>
                     </div>
 
-                    <div className="vacancy-description__content">
-                        <div className="vacancy-description__text">
+                    <div className='vacancy-description__content'>
+                        <div className='vacancy-description__text'>
                             {parse(description)}
                         </div>
                     </div>

@@ -1,17 +1,17 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 
 
-const IndexPage = React.lazy(() => import("./pages/IndexPage"));
-const CompanyPage = React.lazy(() => import("./pages/CompanyPage"));
-const GamesPage = React.lazy(() => import("./pages/GamesPage"));
-const NotFoundPage = React.lazy(() => import("./pages/NotFoundPage"));
-const NewsPage = React.lazy(() => import("./pages/NewsPage"));
-const ContactsPage = React.lazy(() => import("./pages/ContactsPage"));
-const CareerPage = React.lazy(() => import("./pages/CareerPage"));
-const SingleVacancyPage = React.lazy(() => import("./pages/SingleVacancyPage"));
-const SingleNewsPage = React.lazy(() => import("./pages/SingleNewsPage"));
+const IndexPage = React.lazy(() => import('./pages/IndexPage'));
+const CompanyPage = React.lazy(() => import('./pages/CompanyPage'));
+const GamesPage = React.lazy(() => import('./pages/GamesPage'));
+const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
+const NewsPage = React.lazy(() => import('./pages/NewsPage'));
+const ContactsPage = React.lazy(() => import('./pages/ContactsPage'));
+const CareerPage = React.lazy(() => import('./pages/CareerPage'));
+const SingleVacancyPage = React.lazy(() => import('./pages/SingleVacancyPage'));
+const SingleNewsPage = React.lazy(() => import('./pages/SingleNewsPage'));
 
 
 

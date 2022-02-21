@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 import './index.scss';
 
 
@@ -22,14 +22,14 @@ export const PrimaryButton: FC<IPrimaryButtonProps> = ({children, className, pos
             } 
             onClick={onClick}
         >
-            <div className="primary-button__inner">
+            <div className='primary-button__inner'>
                 <span className='primary-button__text'>
                     {children}
                 </span>
 
                 {
                     (position && direction) ? 
-                        <img src={"../images/Arrow--" + direction + ".svg"} alt="" className='primary-button__arrow'/>
+                        <img src={'../images/Arrow--' + direction + '.svg'} alt='' className='primary-button__arrow'/>
                     :
                     null
                 }

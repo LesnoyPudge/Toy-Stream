@@ -1,6 +1,6 @@
-import { useField } from "formik";
-import { FC } from "react";
-import { IInputFieldProps } from "./types";
+import { useField } from 'formik';
+import { FC } from 'react';
+import { IInputFieldProps } from './types';
 
 
 
@@ -10,7 +10,7 @@ export const HiddenInput: FC<IInputFieldProps> = (props) => {
     return (
         <input 
             {...field}
-            type="hidden"
+            type='hidden'
         />
     );
 }

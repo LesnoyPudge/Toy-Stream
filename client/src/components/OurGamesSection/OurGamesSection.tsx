@@ -9,7 +9,7 @@ export const OurGamesSection: FC = () => {
     return (
         <section className='our-games'>
             <div className='container'>
-                <ul className="our-games__list">
+                <ul className='our-games__list'>
                     {
                         data.map((game, index) => {
                             return (

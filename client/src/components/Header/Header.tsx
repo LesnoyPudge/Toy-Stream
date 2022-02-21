@@ -9,13 +9,13 @@ export const Header: FC = () => {
     return (
         <header className='header'>
             <div className='header__inner'>
-                <div className="header__logo">
+                <div className='header__logo'>
                     <Link to='./'>
                         <svg>
                             <use xlinkHref='#logo' />
                         </svg> 
 
-                        <span className="visually-hidden">
+                        <span className='visually-hidden'>
                             <h1>Toy Stream</h1>
                         </span>
                     </Link>

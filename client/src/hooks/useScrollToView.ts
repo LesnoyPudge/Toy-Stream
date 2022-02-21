@@ -8,7 +8,7 @@ export function useScrollToView() {
 
         if (!target) return;
         
-        target.scrollIntoView({block: "start", behavior: "smooth"});
+        target.scrollIntoView({block: 'start', behavior: 'smooth'});
     }
 
     return {handleClick};

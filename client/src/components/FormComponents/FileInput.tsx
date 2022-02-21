@@ -1,8 +1,8 @@
-import { useField, useFormikContext } from "formik";
-import { FC } from "react";
-import { IInputFieldProps } from "./types";
+import { useField, useFormikContext } from 'formik';
+import { FC } from 'react';
+import { IInputFieldProps } from './types';
 import './index.scss';
-import { useFocus } from "../../hooks/useFocus";
+import { useFocus } from '../../hooks/useFocus';
 
 
 
@@ -25,10 +25,10 @@ export const FileInput: FC<IInputFieldProps> = ({className, label, ...props}) =>
                 onFocus={focusHandler}
                 onBlur={blurHandler}
             >
-                <label className="form-field__label">
+                <label className='form-field__label'>
                     {
                         // (label) ? 
-                        //     <span className="form-field__label-text">
+                        //     <span className='form-field__label-text'>
                         //         {label}
                         //     </span>
                         // :
@@ -37,13 +37,13 @@ export const FileInput: FC<IInputFieldProps> = ({className, label, ...props}) =>
 
                     <input 
                         {...props}
-                        className="form-field__input visually-hidden" 
+                        className='form-field__input visually-hidden' 
                         onChange={(event) => {
                             setFieldValue(field.name, event.target.files![0])
                         }}
                     />
 
-                    <div className="form-field__input-placeholder">
+                    <div className='form-field__input-placeholder'>
                         
                         {
                             (field.value) ?
@@ -53,15 +53,15 @@ export const FileInput: FC<IInputFieldProps> = ({className, label, ...props}) =>
                         }
 
                         <svg>
-                            <use xlinkHref="#file-input-icon" />
+                            <use xlinkHref='#file-input-icon' />
                         </svg>
                     </div>
 
-                    <div className="form-field__separator"/>
+                    <div className='form-field__separator'/>
                     
                     {
                         (meta.touched && meta.error) ? 
-                            <span className="form-field__error-message">
+                            <span className='form-field__error-message'>
                                 {meta.error}
                             </span> 
                         : 

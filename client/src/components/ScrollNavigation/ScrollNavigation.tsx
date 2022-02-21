@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useState } from "react";
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import './index.scss';
 
 
@@ -38,7 +38,7 @@ export const ScrollNavigation: FC = ({children}) => {
         if (!targets) return;
         if (!targets[index]) return;
 
-        targets[index].scrollIntoView({block: "start", behavior: "smooth"});
+        targets[index].scrollIntoView({block: 'start', behavior: 'smooth'});
     }
 
     function renderChildren() {
@@ -52,9 +52,9 @@ export const ScrollNavigation: FC = ({children}) => {
  
     return (
         <>
-            <div className="scroll-navigation">
-                <div className="scroll-navigation__inner">
-                    <ul className="scroll-navigation__list">
+            <div className='scroll-navigation'>
+                <div className='scroll-navigation__inner'>
+                    <ul className='scroll-navigation__list'>
                         {
                             renderChildren()
                         }

@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { NavbarItem } from "./NavbarItem";
+import { FC } from 'react';
+import { NavbarItem } from './NavbarItem';
 import './index.scss';
 
 
@@ -22,41 +22,41 @@ export const Navbar: FC<INavbarProps> = ({className, menuIsOpen, handleClose}) =
             onClick={handleClose}
         >
             <ul 
-                className="navbar__list"
+                className='navbar__list'
                 onClick={(e) => {e.stopPropagation()}}
             >
                 <NavbarItem 
-                    label="Главная страница"
+                    label='Главная страница'
                     to='/'
                     handleClose={handleClose}
                 /> 
 
                 <NavbarItem 
-                    label="Игры"
+                    label='Игры'
                     to='/games'
                     handleClose={handleClose}
                 />
 
                 <NavbarItem 
-                    label="Компания"
+                    label='Компания'
                     to='/company'
                     handleClose={handleClose}
                 />
 
                 <NavbarItem 
-                    label="Карьера"
+                    label='Карьера'
                     to='/career'
                     handleClose={handleClose}
                 />
 
                 <NavbarItem 
-                    label="Новости"
+                    label='Новости'
                     to='/news'
                     handleClose={handleClose}
                 />
 
                 <NavbarItem 
-                    label="Контакты"
+                    label='Контакты'
                     to='/contacts'
                     handleClose={handleClose}
                 />

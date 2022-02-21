@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { useParams } from "react-router-dom";
-import { data } from "../components/NewsSection/data";
-import { SingleNewsSection } from "../components/SingleNewsSection/SingleNewsSection";
+import { FC } from 'react';
+import { useParams } from 'react-router-dom';
+import { data } from '../components/NewsSection/data';
+import { SingleNewsSection } from '../components/SingleNewsSection/SingleNewsSection';
 
 
 

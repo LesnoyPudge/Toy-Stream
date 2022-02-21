@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
-import { News } from "../../pages/SingleNewsPage";
-import { PublishDate } from "../PublishDate/PublishDate";
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { News } from '../../pages/SingleNewsPage';
+import { PublishDate } from '../PublishDate/PublishDate';
 
 
 
@@ -19,28 +19,28 @@ export const NewsItem: FC<INewsItemProps> = ({news}) => {
     } = news;
     
     return (
-        <li className="news__news-item news-item">
+        <li className='news__news-item news-item'>
             <Link to={id}>
-                <div className="news-item__inner">
-                    <div className="news-item__header">
+                <div className='news-item__inner'>
+                    <div className='news-item__header'>
                         <img 
-                            className="news-item__image" 
-                            src={"./images/" + image + ".jpg"} 
+                            className='news-item__image' 
+                            src={'./images/' + image + '.jpg'} 
                             alt={label} 
                         />
                     </div>
 
-                    <div className="news-item__content">
+                    <div className='news-item__content'>
                         <PublishDate
                             publishDate={publishDate}
-                            className="news-item"
+                            className='news-item'
                         />
 
-                        <h3 className="news-item__label">
+                        <h3 className='news-item__label'>
                             {label}
                         </h3>
 
-                        <div className="news-item__text">
+                        <div className='news-item__text'>
                             <p>
                                 {shortDesc}
                             </p>

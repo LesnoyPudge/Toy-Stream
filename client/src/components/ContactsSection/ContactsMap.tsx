@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 import { Map, Placemark, YMaps } from 'react-yandex-maps';
 
 

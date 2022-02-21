@@ -1,10 +1,10 @@
-import { FC } from "react";
-import { useParams } from "react-router-dom";
-import { ContactUsSection } from "../components/ContactUsSection/ContactUsSection";
-import { ScrollNavigation } from "../components/ScrollNavigation/ScrollNavigation";
-import { ScrollNavigationItem } from "../components/ScrollNavigation/ScrollNavigationItem";
-import { VacancyDescriptionSection } from "../components/VacancyDescriptionSection/VacancyDescriptionSection";
-import { data } from "../components/VacanciesSection/data";
+import { FC } from 'react';
+import { useParams } from 'react-router-dom';
+import { ContactUsSection } from '../components/ContactUsSection/ContactUsSection';
+import { ScrollNavigation } from '../components/ScrollNavigation/ScrollNavigation';
+import { ScrollNavigationItem } from '../components/ScrollNavigation/ScrollNavigationItem';
+import { VacancyDescriptionSection } from '../components/VacancyDescriptionSection/VacancyDescriptionSection';
+import { data } from '../components/VacanciesSection/data';
 
 
 

@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { useNextPage } from "../../hooks/useNextPage";
-import { IVacancyData } from "../../pages";
-import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
+import { FC } from 'react';
+import { useNextPage } from '../../hooks/useNextPage';
+import { IVacancyData } from '../../pages';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 
 
 
@@ -17,10 +17,10 @@ export const VacancyItem: FC<IVacancyItemProps> = ({vacancy}) => {
     } = vacancy;
 
     return (
-        <li className="vacancies__item">
-            <div className="vacancies__item-inner">
-                <div className="vacancies__item-content">
-                    <h3 className="vacancies__item-label">
+        <li className='vacancies__item'>
+            <div className='vacancies__item-inner'>
+                <div className='vacancies__item-content'>
+                    <h3 className='vacancies__item-label'>
                         {label}
                     </h3>
 

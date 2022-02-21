@@ -1,8 +1,8 @@
-import { CareerSection } from "../components/CareerSection/CareerSection";
-import { ScrollNavigation } from "../components/ScrollNavigation/ScrollNavigation";
-import { ScrollNavigationItem } from "../components/ScrollNavigation/ScrollNavigationItem";
-import { TestimonialsSection } from "../components/TestimonialsSection/TestimonialsSection";
-import { VacanciesSection } from "../components/VacanciesSection/VacanciesSection";
+import { CareerSection } from '../components/CareerSection/CareerSection';
+import { ScrollNavigation } from '../components/ScrollNavigation/ScrollNavigation';
+import { ScrollNavigationItem } from '../components/ScrollNavigation/ScrollNavigationItem';
+import { TestimonialsSection } from '../components/TestimonialsSection/TestimonialsSection';
+import { VacanciesSection } from '../components/VacanciesSection/VacanciesSection';
 
 
 

@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { Navbar } from "../Navbar/Navbar";
-import { SocialLiks } from "../SocialLinks/SocialLinks";
+import { FC } from 'react';
+import { Navbar } from '../Navbar/Navbar';
+import { SocialLiks } from '../SocialLinks/SocialLinks';
 import './index.scss';
 
 

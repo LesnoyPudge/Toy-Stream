@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { SectionTitle } from "../SectionTitle/SectionTitle";
+import { FC } from 'react';
+import { SectionTitle } from '../SectionTitle/SectionTitle';
 import parse from 'html-react-parser';
 
 
@@ -23,17 +23,17 @@ export const LastProjectsItem: FC<IOurGamesItemProps> = ({game}) => {
     } = game;
 
     return (
-        <div className="last-projects__item">
-            <div className="last-projects__item-image">
-                <img src={"./images/" + image + ".jpg"} alt="" />
+        <div className='last-projects__item'>
+            <div className='last-projects__item-image'>
+                <img src={'./images/' + image + '.jpg'} alt='' />
             </div>
 
-            <div className="last-projects__item-content">
-                <h3 className="last-projects__item-title">
+            <div className='last-projects__item-content'>
+                <h3 className='last-projects__item-title'>
                     {parse(label)}
                 </h3>
 
-                <div className="last-projects__item-text">
+                <div className='last-projects__item-text'>
                     {parse(description)}
                 </div>
             </div>

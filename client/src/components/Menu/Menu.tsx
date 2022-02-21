@@ -1,7 +1,7 @@
-import { FC, useState } from "react";
-import { LangugageSwitch } from "../LanguageSwitch/LanguageSwitch";
-import { Navbar } from "../Navbar/Navbar";
-import { BurgerButton } from "../BurgerButton/BurgerButton";
+import { FC, useState } from 'react';
+import { LangugageSwitch } from '../LanguageSwitch/LanguageSwitch';
+import { Navbar } from '../Navbar/Navbar';
+import { BurgerButton } from '../BurgerButton/BurgerButton';
 
 
 export const Menu: FC = () => {
@@ -33,7 +33,7 @@ export const Menu: FC = () => {
             <LangugageSwitch className='header' />
 
             <BurgerButton
-                className="header"
+                className='header'
                 menuIsOpen={menuIsOpen}
                 handleToggle={handleToggle}
             />

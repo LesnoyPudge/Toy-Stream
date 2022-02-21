@@ -1,8 +1,8 @@
-import { FC } from "react";
-import { AboutCompanySection } from "../components/AboutCompanySection/AboutCompanySection";
-import { OurTeamSection } from "../components/OutTeamSection/OurTeamSection";
-import { ScrollNavigation } from "../components/ScrollNavigation/ScrollNavigation";
-import { ScrollNavigationItem } from "../components/ScrollNavigation/ScrollNavigationItem";
+import { FC } from 'react';
+import { AboutCompanySection } from '../components/AboutCompanySection/AboutCompanySection';
+import { OurTeamSection } from '../components/OutTeamSection/OurTeamSection';
+import { ScrollNavigation } from '../components/ScrollNavigation/ScrollNavigation';
+import { ScrollNavigationItem } from '../components/ScrollNavigation/ScrollNavigationItem';
 
 
 

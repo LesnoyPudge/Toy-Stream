@@ -1,8 +1,8 @@
-import { useField } from "formik";
-import { FC } from "react";
-import { IInputFieldProps } from "./types";
+import { useField } from 'formik';
+import { FC } from 'react';
+import { IInputFieldProps } from './types';
 import './index.scss';
-import { useFocus } from "../../hooks/useFocus";
+import { useFocus } from '../../hooks/useFocus';
 
 
 
@@ -24,10 +24,10 @@ export const TextInput: FC<IInputFieldProps> = ({className, label, ...props}) =>
                 onFocus={focusHandler}
                 onBlur={blurHandler}
             >
-                <label className="form-field__label">
+                <label className='form-field__label'>
                     {
                         // (label) ? 
-                        //     <span className="form-field__label-text">
+                        //     <span className='form-field__label-text'>
                         //         {label}
                         //     </span>
                         // :
@@ -36,14 +36,14 @@ export const TextInput: FC<IInputFieldProps> = ({className, label, ...props}) =>
 
                     <input 
                         {...field} {...props}
-                        className="form-field__input" 
+                        className='form-field__input' 
                     />
 
-                    <div className="form-field__separator"/>
+                    <div className='form-field__separator'/>
                     
                     {
                         (meta.touched && meta.error) ? 
-                            <span className="form-field__error-message">
+                            <span className='form-field__error-message'>
                                 {meta.error}
                             </span> 
                         : 

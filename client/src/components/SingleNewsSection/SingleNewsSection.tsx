@@ -1,11 +1,11 @@
-import { FC } from "react";
-import { News } from "../../pages/SingleNewsPage";
-import { SectionTitle } from "../SectionTitle/SectionTitle";
+import { FC } from 'react';
+import { News } from '../../pages/SingleNewsPage';
+import { SectionTitle } from '../SectionTitle/SectionTitle';
 import parse from 'html-react-parser';
 import './index.scss';
-import { PublishDate } from "../PublishDate/PublishDate";
-import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
-import { useNextPage } from "../../hooks/useNextPage";
+import { PublishDate } from '../PublishDate/PublishDate';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
+import { useNextPage } from '../../hooks/useNextPage';
 
 
 
@@ -23,12 +23,12 @@ export const SingleNewsSection: FC<ISingleNewsSectionProps> = ({news}) => {
     } = news;
 
     return (
-        <section className="single-news">
-            <div className="container">
-                <div className="single-news__inner">
-                    <div className="single-news__header">
+        <section className='single-news'>
+            <div className='container'>
+                <div className='single-news__inner'>
+                    <div className='single-news__header'>
                         <SectionTitle
-                            className="single-news"
+                            className='single-news'
                         >
                             Новость
                         </SectionTitle>
@@ -41,23 +41,23 @@ export const SingleNewsSection: FC<ISingleNewsSectionProps> = ({news}) => {
                         </PrimaryButton>
                     </div>
 
-                    <div className="single-news__content">
+                    <div className='single-news__content'>
                         <img 
-                            className="single-news__image" 
-                            src={"../images/" + image + ".jpg"} 
+                            className='single-news__image' 
+                            src={'../images/' + image + '.jpg'} 
                             alt={label} 
                         />
                         
                         <PublishDate
                             publishDate={publishDate}
-                            className="single-news"
+                            className='single-news'
                         />
 
-                        <div className="single-news__label">
+                        <div className='single-news__label'>
                             {label}
                         </div>
 
-                        <div className="single-news__text">
+                        <div className='single-news__text'>
                             {parse(text)}
                         </div>  
                     </div>

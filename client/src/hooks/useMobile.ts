@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 
 
@@ -8,18 +8,18 @@ export function useMobile() {
 
     useEffect(() => {
         function handleResize() {
-            if (window.matchMedia("(max-width: 1000px)").matches) {
+            if (window.matchMedia('(max-width: 1000px)').matches) {
                 setIsMobile(true);
 
-                if (window.matchMedia("(max-width: 425px)").matches) {
+                if (window.matchMedia('(max-width: 425px)').matches) {
                     return setMobileSize('S');
                 }
 
-                if (window.matchMedia("(max-width: 750px)").matches) {
+                if (window.matchMedia('(max-width: 750px)').matches) {
                     return setMobileSize('M');
                 }
 
-                if (window.matchMedia("(max-width: 1000px)").matches) {
+                if (window.matchMedia('(max-width: 1000px)').matches) {
                     return setMobileSize('L');
                 }
 
