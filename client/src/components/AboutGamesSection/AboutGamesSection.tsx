@@ -1,11 +1,14 @@
 import { FC } from 'react';
-import { ScrollToSectionButton } from '../ScrollToSectionButton/ScrollToSectionButton';
+import { useScrollToView } from '../../hooks/useScrollToView';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { SectionTitle } from '../SectionTitle/SectionTitle';
 import './index.scss';
 
 
 
 export const AboutGamesSection: FC = () => {
+    const {handleClick} = useScrollToView();
+
     return (
         <section className='about-games'>
             <div className='container'>
@@ -35,15 +38,15 @@ export const AboutGamesSection: FC = () => {
                                 </p>
                             </div>
 
-                            <ScrollToSectionButton
+                            <PrimaryButton
                                 className='about-games'
                                 position='right'
                                 direction='down'
-                                to='.our-games'
+                                onClick={() => {handleClick('.our-games')}}
                             >
                                 Смотреть <br/> 
                                 наши работы
-                            </ScrollToSectionButton>
+                            </PrimaryButton>
                         </div>
                     </div>
 

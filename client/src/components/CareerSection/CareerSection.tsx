@@ -1,11 +1,14 @@
 import { FC } from 'react';
-import { ScrollToSectionButton } from '../ScrollToSectionButton/ScrollToSectionButton';
+import { useScrollToView } from '../../hooks/useScrollToView';
+import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { SectionTitle } from '../SectionTitle/SectionTitle';
 import './index.scss';
 
 
 
 export const CareerSection: FC = () => {
+    const {handleClick} = useScrollToView();
+
     return (
         <section className='career'>
             <div className='container'>
@@ -29,14 +32,14 @@ export const CareerSection: FC = () => {
                                 </p>
                             </div>
 
-                            <ScrollToSectionButton
+                            <PrimaryButton
                                 className='career'
                                 position='right'
                                 direction='down'
-                                to='.vacancies'
+                                onClick={() => {handleClick('.vacancies')}}
                             >
                                 Вакансии
-                            </ScrollToSectionButton>
+                            </PrimaryButton>
                         </div>
                     </div>
 

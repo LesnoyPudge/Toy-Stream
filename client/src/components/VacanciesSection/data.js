@@ -66,7 +66,7 @@ export const data = [
     {
         id: '2',
         url: 'hr-manager',
-        label: 'HR Manager (Marketing/Cross)',
+        label: 'HR Manager',
         description: description,
     },
 
@@ -87,7 +87,7 @@ export const data = [
     {
         id: '5',
         url: 'hr-manager',
-        label: 'HR Manager (Marketing/Cross)',
+        label: 'HR Manager',
         description: description,
     },
 
@@ -108,7 +108,7 @@ export const data = [
     {
         id: '8',
         url: 'hr-manager',
-        label: 'HR Manager (Marketing/Cross)',
+        label: 'HR Manager',
         description: description,
     },
 

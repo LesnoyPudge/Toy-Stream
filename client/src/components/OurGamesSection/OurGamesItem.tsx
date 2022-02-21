@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { SectionTitle } from "../SectionTitle/SectionTitle";
 import parse from 'html-react-parser';
-import { NextPageButton } from "../NextPageButton/NextPageButton";
+import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
 
 
 
@@ -41,14 +41,13 @@ export const OurGamesItem: FC<IOurGamesItemProps> = ({game}) => {
                         </div>
                     </div>
 
-                    <NextPageButton
+                    <PrimaryButton
                         className='our-games'
                         position='bottom'
                         direction='right'
-                        to=''
                     >
                         Подробнее
-                    </NextPageButton>
+                    </PrimaryButton>
                 </div>
 
                 <div className='our-games__image-side'>

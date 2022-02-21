@@ -10,10 +10,17 @@ export function useMobile() {
         function handleResize() {
             if (window.matchMedia("(max-width: 1000px)").matches) {
                 setIsMobile(true);
-                setMobileSize('L');
 
                 if (window.matchMedia("(max-width: 425px)").matches) {
-                    setMobileSize('S');
+                    return setMobileSize('S');
+                }
+
+                if (window.matchMedia("(max-width: 750px)").matches) {
+                    return setMobileSize('M');
+                }
+
+                if (window.matchMedia("(max-width: 1000px)").matches) {
+                    return setMobileSize('L');
                 }
 
             } else {

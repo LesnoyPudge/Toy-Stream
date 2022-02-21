@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { News } from "../../pages/SingleNewsPage";
-import { NextPageButton } from "../NextPageButton/NextPageButton";
 import { SectionTitle } from "../SectionTitle/SectionTitle";
 import parse from 'html-react-parser';
 import './index.scss';
 import { PublishDate } from "../PublishDate/PublishDate";
+import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
+import { useNextPage } from "../../hooks/useNextPage";
 
 
 
@@ -13,6 +14,7 @@ interface ISingleNewsSectionProps {
 }
 
 export const SingleNewsSection: FC<ISingleNewsSectionProps> = ({news}) => {
+    const {handleNavigate} = useNextPage()
     const {
         image = news.image,
         label = news.label,
@@ -31,14 +33,12 @@ export const SingleNewsSection: FC<ISingleNewsSectionProps> = ({news}) => {
                             Новость
                         </SectionTitle>
 
-                        <NextPageButton
-                            className="single-news"
-                            position="down"
-                            direction="left"
-                            to="/news"
+                        <PrimaryButton
+                            className='single-news'
+                            onClick={() => {handleNavigate('/news')}}
                         >
                             Назад
-                        </NextPageButton>
+                        </PrimaryButton>
                     </div>
 
                     <div className="single-news__content">

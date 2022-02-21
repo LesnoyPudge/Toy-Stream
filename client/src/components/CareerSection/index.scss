@@ -11,12 +11,13 @@
     }
 
     &__inner {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 100px;
+        margin-top: var(--header-height);
     }
 
     &__content-side {
-        flex: 1 1 45%;
         display: flex;
         flex-direction: column;
         gap: 50px;
@@ -25,14 +26,13 @@
 
     &__image-side {
         display: flex;
-        flex: 1 1 55%;
         justify-content: start;
         align-items: center;
     }
 
     &__image {
-        width: auto;
-        height: 85%;
+        width: 100%;
+        height: auto;
     }
 
     &__header {}
@@ -52,5 +52,18 @@
     &__text {
         font-weight: 600;
         line-height: 1.2;
+    }
+}
+
+@media (max-width: 1000px) {
+    .career {
+        &__inner {
+            margin-top: 0;
+            grid-template-columns: 1fr;
+        }
+
+        &__image {
+            display: none;
+        }
     }
 }

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { SectionTitle } from "../SectionTitle/SectionTitle";
 import './index.scss';
@@ -6,10 +6,49 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import { Navigation } from "swiper";
 import { SliderNavigation } from "../SliderNavigation/SliderNavigation";
+import { useMobile } from "../../hooks/useMobile";
 
 
 
 export const OurTeamSection: FC = () => {
+    const {isMobile, mobileSize} = useMobile();
+    const [options, setOptions] = useState({
+        spaceBetween: 70,
+        slidesPerView: 4,
+    });
+
+    useEffect(() => {
+        if (!isMobile) {
+            setOptions({
+                spaceBetween: 70,
+                slidesPerView: 4,
+            })
+        }
+
+        if (isMobile && mobileSize === 'L') {
+            setOptions({
+                spaceBetween: 30,
+                slidesPerView: 3,
+            })
+        }
+
+        if (isMobile && mobileSize === 'M') {
+            setOptions({
+                spaceBetween: 30,
+                slidesPerView: 2,
+            })
+        }
+
+        if (isMobile && mobileSize === 'S') {
+            setOptions({
+                spaceBetween: 70,
+                slidesPerView: 1,
+            })
+        }
+    }, [isMobile, mobileSize]);
+
+
+
     return (
         <section className="our-team">
             <div className="container">
@@ -33,8 +72,8 @@ export const OurTeamSection: FC = () => {
                         <div className="our-team__slider">
                             <Swiper
                                 modules={[Navigation]}
-                                spaceBetween={70}
-                                slidesPerView={4}
+                                spaceBetween={options.spaceBetween}
+                                slidesPerView={options.slidesPerView}
                                 navigation={
                                     {
                                         nextEl: '.slider-navigation__next',

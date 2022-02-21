@@ -20,18 +20,34 @@ export const LastProjectsSection: FC = () => {
     });
 
     useEffect(() => {
-        if (isMobile) {
-            setOptions({
-                spaceBetween: 40,
-                slidesPerView: 2,
-            })
-        } else {
+        if (!isMobile) {
             setOptions({
                 spaceBetween: 160,
                 slidesPerView: 3,
             })
         }
-    }, [isMobile]);
+
+        if (isMobile && mobileSize === 'L') {
+            setOptions({
+                spaceBetween: 40,
+                slidesPerView: 3,
+            })
+        }
+
+        if (isMobile && mobileSize === 'M') {
+            setOptions({
+                spaceBetween: 40,
+                slidesPerView: 2,
+            })
+        }
+
+        if (isMobile && mobileSize === 'S') {
+            setOptions({
+                spaceBetween: 40,
+                slidesPerView: 1,
+            })
+        }
+    }, [isMobile, mobileSize]);
 
     return (
         <section className="last-projects">

@@ -87,7 +87,7 @@ export const ContactForm: FC<IContactFormProps> = ({className}) => {
                     className={formClassName}
                 >
                     <div className={formClassName + '__inner'}>
-                        <div className={formClassName + '__row'}>
+
                             <TextInput
                                 className={formClassName}
                                 label="Как к вам обращаться?*"
@@ -111,9 +111,9 @@ export const ContactForm: FC<IContactFormProps> = ({className}) => {
                                 type="tel"
                                 placeholder="8 800 555 35 35"
                             />
-                        </div>
 
-                        <div className={formClassName + '__row'}>
+
+
                             <FileInput
                                 className={formClassName}
                                 label="Ваше резюме*"
@@ -137,7 +137,7 @@ export const ContactForm: FC<IContactFormProps> = ({className}) => {
                                 type="text"
                                 placeholder="Дополнительный комментарий"
                             />
-                        </div>
+
 
                         <HiddenInput
                             name="requestTime"

@@ -1,6 +1,6 @@
 .vacancy-description {
     &__inner {
-        margin-top: 160px;
+        margin-top: var(--header-height)
     }
 
     &__header {
@@ -9,7 +9,7 @@
 
     &__section-title {}
 
-    &__next-page-button {}
+    &__primary-button {}
 
     &__content {}
 

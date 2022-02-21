@@ -1,21 +1,19 @@
 .testimonials {
     &__inner {
-        display: flex;
-        gap: 180px;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
     }
 
     &__left-side {
         display: flex;
         flex-direction: column;
         gap: 40px;
-        flex: 1 1 50%;
     }
 
     &__right-side {
         display: flex;
         align-items: center;
-        flex: 1 1 50%;
     }
 
     &__header {}
@@ -94,5 +92,36 @@
     &__item-subtitle {
         font-weight: 600;
         color: var(--font__secondary);
+    }
+}
+
+@media (max-width: 1000px) {
+    .testimonials {
+        &__inner {
+            grid-template-columns: 1fr;
+        }
+
+        &__right-side {
+            justify-content: center;
+        }
+
+        &__list {
+            width: 100%;
+            gap: 50px;
+            justify-content: space-between;
+        }
+
+        &__item {
+            align-items: center;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .testimonials {
+        &__list {
+            grid-template-columns: 1fr;
+        }
     }
 }

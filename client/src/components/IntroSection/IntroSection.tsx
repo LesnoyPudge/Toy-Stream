@@ -1,11 +1,14 @@
 import { FC } from "react";
-import { NextPageButton } from "../NextPageButton/NextPageButton";
+import { useNextPage } from "../../hooks/useNextPage";
+import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
 import { SectionTitle } from "../SectionTitle/SectionTitle";
 import './index.scss';
 
 
 
 export const IntroSection: FC = () => {
+    const {handleNavigate} = useNextPage();
+    
     return (
         <section className="intro">
             <div className="container">
@@ -22,15 +25,15 @@ export const IntroSection: FC = () => {
                         </div>
                         
                         <div className="intro__content">
-                            <NextPageButton
+                            <PrimaryButton
                                 className='intro'
-                                position='down'
+                                position='bottom'
                                 direction='right'
-                                to='/company'
+                                onClick={() => {handleNavigate('/games')}}
                             >
                                 Узнать <br/> 
                                 подробнее
-                            </NextPageButton>
+                            </PrimaryButton>
 
                             <div className="intro__text">
                                 <p>

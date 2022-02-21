@@ -1,4 +1,6 @@
 .contact-us {
+    margin-top: 50px;
+
     &__inner {}
 
     &__header {
@@ -6,23 +8,35 @@
     }
 
     &__content {}
+}
 
-    &-form {
+.contact-us-form {
+    &__inner {
+        display: grid;
+        gap: 50px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    &__form-field {}
+
+    &__form-submit {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .contact-us-form {
         &__inner {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
+            grid-template-columns: repeat(2, 1fr);
         }
-    
-        &__row {
-            display: flex;
-            gap: 55px;
-        }
+    }
+}
 
-        &__form-field {}
-    
-        &__form-submit {
-            margin-top: 50px;
+@media (max-width: 600px) {
+    .contact-us-form {
+        &__inner {
+            grid-template-columns: repeat(1, 1fr);
         }
     }
 }

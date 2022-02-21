@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { useNextPage } from "../../hooks/useNextPage";
 import { IVacancyData } from "../../pages";
-import { NextPageButton } from "../NextPageButton/NextPageButton";
+import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
 
 
 
@@ -9,6 +10,7 @@ interface IVacancyItemProps {
 }
 
 export const VacancyItem: FC<IVacancyItemProps> = ({vacancy}) => {
+    const {handleNavigate} = useNextPage()
     const {
         id = vacancy.id,
         label = vacancy.label,
@@ -22,14 +24,14 @@ export const VacancyItem: FC<IVacancyItemProps> = ({vacancy}) => {
                         {label}
                     </h3>
 
-                    <NextPageButton
-                        className="vacancies"
-                        position="bottom"
-                        direction="right"
-                        to={id}
+                    <PrimaryButton
+                        className='vacancies'
+                        position='bottom'
+                        direction='right'
+                        onClick={() => {handleNavigate(id)}}
                     >
                         Подробнее
-                    </NextPageButton>
+                    </PrimaryButton>
                 </div>
             </div>
         </li>
