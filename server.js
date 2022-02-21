@@ -8,7 +8,7 @@ const PORT = config.get('port') || 5000;
 
 app.use(express.json({ extended: true }));
 
-app.use('/api/apartments', require('./routes/apartments.routes'));
+app.use('/api/candidate', require('./routes/candidate.routes'));
 
 if (process.env.NODE_ENV === 'production') {
     app.use('/', express.static(path.join(__dirname, 'client', 'build')))
@@ -20,10 +20,10 @@ if (process.env.NODE_ENV === 'production') {
 
 async function start() {
     try {
-        // await mongoose.connect((config.get('dbconnection')), {
-        //     useNewUrlParser: true,
-        //     useUnifiedTopology: true,
-        // });
+        await mongoose.connect((config.get('dbconnection')), {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
 
         app.listen(PORT, () => console.log(`started: ${PORT}`));
     } catch (error) {

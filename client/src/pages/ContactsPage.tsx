@@ -2,8 +2,10 @@ import { ContactsSection } from "../components/ContactsSection/ContactsSection";
 
 
 
-export const ContactsPage = () => {
+const ContactsPage = () => {
     return (
         <ContactsSection/>
     );
 }
+
+export default ContactsPage;

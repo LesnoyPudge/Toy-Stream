@@ -15,7 +15,7 @@ export interface IVacancyData {
     description: string;
 }
 
-export const SingleVacancyPage: FC = () => {
+const SingleVacancyPage: FC = () => {
     const { vacancyId } = useParams();
 
     const vacancy = data.filter((item) => {
@@ -41,3 +41,5 @@ export const SingleVacancyPage: FC = () => {
         </>
     );
 }
+
+export default SingleVacancyPage;

@@ -6,7 +6,7 @@ import { ScrollNavigationItem } from "../components/ScrollNavigation/ScrollNavig
 
 
 
-export const CompanyPage: FC = () => {
+const CompanyPage: FC = () => {
     return (
         
         <>
@@ -24,3 +24,5 @@ export const CompanyPage: FC = () => {
         </>
     );
 }
+
+export default CompanyPage;

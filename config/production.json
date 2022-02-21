@@ -1,4 +1,4 @@
 {
     "port": 80,
-    "dbconnection": ""
+    "dbconnection": "mongodb+srv://userok:12345@cluster0.thpwf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 }

@@ -14,10 +14,10 @@ export const BurgerButton: FC<IBurgerButton> = ({className, menuIsOpen, handleTo
     return (
         <button className=
             {
+                'button ' +
                 (className ? className + "__burger " : '') + 
                 "burger " + 
-                (menuIsOpen ? 'burger--active ' : '') +
-                " button"
+                (menuIsOpen ? 'burger--active ' : '')
             }
 
             onClick={handleToggle}

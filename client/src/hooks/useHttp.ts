@@ -26,10 +26,10 @@ export function useHttp() {
             setIsLoading(false);
 
             return data;
-        } catch (e) {
-            // setIsLoading(false);
-            // setError(e);
-            // throw e;
+        } catch (e: any) {
+            setIsLoading(false);
+            setError(e);
+            throw e;
         }
     }, []);
     

@@ -114,4 +114,12 @@
     color: var(--accent__text);
     padding: 26px 40px;
     font-weight: 600;
+
+    &--success {
+        background-color: var(--form-submit--success);
+    }
+
+    &--error {
+        background-color: var(--form-submit--error);;
+    }
 }

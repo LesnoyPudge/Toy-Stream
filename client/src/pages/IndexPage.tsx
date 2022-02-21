@@ -3,8 +3,10 @@ import { IntroSection } from '../components/IntroSection/IntroSection';
 
 
 
-export const IndexPage: FC = () => {
+const IndexPage: FC = () => {
     return (
         <IntroSection/>
     );
 };
+
+export default IndexPage;

@@ -14,7 +14,7 @@ export interface News {
     text: string;
 }
 
-export const SingleNewsPage: FC = () => {
+const SingleNewsPage: FC = () => {
     const { newsId } = useParams();
 
     const news = data.filter((item) => {
@@ -27,3 +27,5 @@ export const SingleNewsPage: FC = () => {
         />
     );
 }
+
+export default SingleNewsPage;

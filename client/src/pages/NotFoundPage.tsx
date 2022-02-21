@@ -1,10 +1,12 @@
 
 
 
-export const NotFoundPage = () => {
+const NotFoundPage = () => {
     return (
-        <div className=''>
+        <div style={{margin: 'auto', fontSize: '4rem'}}>
             NOT FOUND
         </div>
     );
 }
+
+export default NotFoundPage;

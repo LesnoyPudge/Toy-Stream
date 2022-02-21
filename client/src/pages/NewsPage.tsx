@@ -3,8 +3,10 @@ import { NewsSection } from "../components/NewsSection/NewsSection";
 
 
 
-export const NewsPage: FC = () => {
+const NewsPage: FC = () => {
     return (
         <NewsSection/>
     );
 }
+
+export default NewsPage;

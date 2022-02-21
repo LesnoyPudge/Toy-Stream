@@ -6,7 +6,7 @@ import { VacanciesSection } from "../components/VacanciesSection/VacanciesSectio
 
 
 
-export const CareerPage = () => {
+const CareerPage = () => {
     return (
         <>
             <ScrollNavigation>
@@ -29,3 +29,5 @@ export const CareerPage = () => {
         </>
     );
 }
+
+export default CareerPage;

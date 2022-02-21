@@ -6,7 +6,7 @@ import { ScrollNavigationItem } from "../components/ScrollNavigation/ScrollNavig
 
 
 
-export const GamesPage = () => {
+const GamesPage = () => {
     return (
         <>
             <ScrollNavigation>
@@ -29,3 +29,5 @@ export const GamesPage = () => {
         </>
     );
 }
+
+export default GamesPage;

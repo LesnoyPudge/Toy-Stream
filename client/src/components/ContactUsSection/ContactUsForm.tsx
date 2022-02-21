@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { useHttp } from "../../hooks/useHttp";
@@ -24,6 +24,7 @@ interface IContactFormValues {
 }
 
 export const ContactForm: FC<IContactFormProps> = ({className}) => {
+    const [submitedOnce, setSubmitedOnce] = useState(false);
     const { vacancyId } = useParams();
     const { request, error } = useHttp();
     const formClassName = className;
@@ -65,7 +66,11 @@ export const ContactForm: FC<IContactFormProps> = ({className}) => {
     async function submitHandler(values: IContactFormValues) {   
         try {
             values.requestTime = Date.now().toString();
-            await request('./api/candidate/add', 'POST', values);
+            console.log(values);
+            
+            await request('../api/candidate/add', 'POST', values);
+
+            setSubmitedOnce(true);
         } catch (error) {
             console.log(error);
         }    
@@ -85,6 +90,7 @@ export const ContactForm: FC<IContactFormProps> = ({className}) => {
             {({isSubmitting}) => (
                 <Form
                     className={formClassName}
+                    // encType={"multipart/form-data"}
                 >
                     <div className={formClassName + '__inner'}>
 
@@ -111,8 +117,6 @@ export const ContactForm: FC<IContactFormProps> = ({className}) => {
                                 type="tel"
                                 placeholder="8 800 555 35 35"
                             />
-
-
 
                             <FileInput
                                 className={formClassName}
@@ -154,9 +158,22 @@ export const ContactForm: FC<IContactFormProps> = ({className}) => {
                                 className={formClassName}
                                 name="submit"
                                 disabled={isSubmitting}
+                                state={'error'}
                             >
                                 {
                                     (isSubmitting) ? <Loader/> : 'Ошибка! Повторите попытку'
+                                }
+                            </SubmitButton>
+                        :
+                        (submitedOnce) ? 
+                            <SubmitButton
+                                className={formClassName}
+                                name="submit"
+                                disabled={isSubmitting}
+                                state={'success'}
+                            >
+                                {
+                                    (isSubmitting) ? <Loader/> : 'Отправлено'
                                 }
                             </SubmitButton>
                         :

@@ -13,4 +13,5 @@ export interface ISubmitButtonProps {
     className?: string;
     disabled?: boolean;
     name: string;
+    state?: 'success' | 'error';
 }

@@ -4,7 +4,7 @@ import { ISubmitButtonProps } from "./types";
 
 
 
-export const SubmitButton: FC<ISubmitButtonProps> = ({className, disabled, children, ...props}) => {
+export const SubmitButton: FC<ISubmitButtonProps> = ({className, disabled, state, children, ...props}) => {
     const [field] = useField(props);
     
     return (
@@ -15,7 +15,8 @@ export const SubmitButton: FC<ISubmitButtonProps> = ({className, disabled, child
             className={
                 (className ? className + '__form-submit ' : '') +
                 'form-submit ' +
-                'button '
+                'button ' +
+                ((state) ? 'form-submit--' + state : '')
             }  
         >
             {children}    
